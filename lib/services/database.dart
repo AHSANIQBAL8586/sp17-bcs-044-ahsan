@@ -44,12 +44,7 @@ class NotesDatabaseService {
     return notesList;
   }
 
-  updateNoteInDB(NotesModel updatedNote) async {
-    final db = await database;
-    await db.update('Notes', updatedNote.toMap(),
-        where: '_id = ?', whereArgs: [updatedNote.id]);
-    print('Note updated: ${updatedNote.title} ${updatedNote.content}');
-  }
+
 
   deleteNoteInDB(NotesModel noteToDelete) async {
     final db = await database;
