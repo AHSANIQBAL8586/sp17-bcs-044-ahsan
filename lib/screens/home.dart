@@ -1,14 +1,14 @@
 import 'dart:async';
-import 'settings.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:notes/components/faderoute.dart';
+import 'package:notes/data/models.dart';
 import 'package:notes/screens/edit.dart';
 import 'package:notes/screens/view.dart';
-import 'package:notes/data/models.dart';
 import 'package:notes/services/database.dart';
-
+import 'settings.dart';
 import 'package:outline_material_icons/outline_material_icons.dart';
 import '../components/cards.dart';
 
@@ -79,7 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       Navigator.push(
                           context,
                           CupertinoPageRoute(
-                              builder: (context) =>SettingsPage (
+                              builder: (context) => SettingsPage(
                                   changeTheme: widget.changeTheme)));
                     },
                     child: AnimatedContainer(
@@ -178,7 +178,11 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                   ),
-                 
+                  IconButton(
+                    icon: Icon(isSearchEmpty ? Icons.search : Icons.cancel,
+                        color: Colors.grey.shade300),
+                    onPressed: cancelSearch,
+                  ),
                 ],
               ),
             ),
@@ -221,7 +225,45 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  
+  Widget buildImportantIndicatorText() {
+    return AnimatedCrossFade(
+      duration: Duration(milliseconds: 200),
+      firstChild: Padding(
+        padding: const EdgeInsets.only(top: 8),
+        child: Text(
+          'Only showing notes marked important'.toUpperCase(),
+          style: TextStyle(
+              fontSize: 12, color: Colors.blue, fontWeight: FontWeight.w500),
+        ),
+      ),
+      secondChild: Container(
+        height: 2,
+      ),
+      crossFadeState:
+          isFlagOn ? CrossFadeState.showFirst : CrossFadeState.showSecond,
+    );
+  }
+
+  List<Widget> buildNoteComponentsList() {
+    List<Widget> noteComponentsList = [];
+    notesList.sort((a, b) {
+      return b.date.compareTo(a.date);
+    });
+    if (searchController.text.isNotEmpty) {
+      notesList.forEach((note) {
+        if (note.title
+                .toLowerCase()
+                .contains(searchController.text.toLowerCase()) ||
+            note.content
+                .toLowerCase()
+                .contains(searchController.text.toLowerCase()))
+          noteComponentsList.add(NoteCardComponent(
+            noteData: note,
+            onTapAction: openNoteToRead,
+          ));
+      });
+      return noteComponentsList;
+    }
     if (isFlagOn) {
       notesList.forEach((note) {
         if (note.isImportant)
@@ -283,6 +325,11 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
- 
+  void cancelSearch() {
+    FocusScope.of(context).requestFocus(new FocusNode());
+    setState(() {
+      searchController.clear();
+      isSearchEmpty = true;
+    });
   }
 }
