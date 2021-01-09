@@ -1,5 +1,5 @@
 import 'dart:async';
-
+import 'settings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -77,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       Navigator.push(
                           context,
                           CupertinoPageRoute(
-                              builder: (context) => (
+                              builder: (context) =>SettingsPage (
                                   changeTheme: widget.changeTheme)));
                     },
                     child: AnimatedContainer(
