@@ -43,3 +43,29 @@ class NotesDatabaseService {
     }
     return notesList;
   }
+
+  updateNoteInDB(NotesModel updatedNote) async {
+    final db = await database;
+    await db.update('Notes', updatedNote.toMap(),
+        where: '_id = ?', whereArgs: [updatedNote.id]);
+    print('Note updated: ${updatedNote.title} ${updatedNote.content}');
+  }
+
+  deleteNoteInDB(NotesModel noteToDelete) async {
+    final db = await database;
+    await db.delete('Notes', where: '_id = ?', whereArgs: [noteToDelete.id]);
+    print('Note deleted');
+  }
+
+  Future<NotesModel> addNoteInDB(NotesModel newNote) async {
+    final db = await database;
+    if (newNote.title.trim().isEmpty) newNote.title = 'Untitled Note';
+    int id = await db.transaction((transaction) {
+      transaction.rawInsert(
+          'INSERT into Notes(title, content, date, isImportant) VALUES ("${newNote.title}", "${newNote.content}", "${newNote.date.toIso8601String()}", ${newNote.isImportant == true ? 1 : 0});');
+    });
+    newNote.id = id;
+    print('Note added: ${newNote.title} ${newNote.content}');
+    return newNote;
+  }
+}

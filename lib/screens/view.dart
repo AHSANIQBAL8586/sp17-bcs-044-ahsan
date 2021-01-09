@@ -204,13 +204,22 @@ class _ViewNotePageState extends State<ViewNotePage> {
               FlatButton(
                 child: Text('CANCEL',
                     style: TextStyle(
-                        color: Theme.of(context).primaryColor,
+                        color: Colors.black,
                         fontWeight: FontWeight.w500,
                         letterSpacing: 1)),
                 onPressed: () {
                   Navigator.pop(context);
                 },
               )
+ FlatButton(
+                child: Text('delete',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w500,
+                        letterSpacing: 1)),
+                onPressed: () {
+                  Navigator.pop(context);
+                }
             ],
           );
         });
