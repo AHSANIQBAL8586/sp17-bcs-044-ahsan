@@ -1,7 +1,38 @@
 # labfinal
 
-A new Flutter application.
 
+  SPLASH SCREEN   <kbd><img src="screenshoot/aa.jpeg" ></kbd>
+  </br>
+</br>
+  
+   LOGIN PAGE <kbd><img src="screenshoot/bb.jpeg" width="400"></kbd>
+</br>
+</br>
+   SIGNUP PAGE <kbd><img src="screenshoot/c.jpeg" width="400"></kbd>
+</br>
+</br>
+ MAIN ADDED NOTE SCREEN   <kbd><img src="screenshoot/d.jpg" width="400"></kbd>
+</br>
+</br>
+ SEARCHING NOTE <kbd><img src="screenshoot/e.jpeg" width="400"></kbd>
+ </br>
+</br>
+VIEW NOTES <kbd><img src="screenshoot/f.jpg" width="400"></kbd>
+  </br>
+</br>
+  DELETE NOTES  <kbd><img src="screenshoot/g.jpeg" width="400"></kbd>
+ </br>
+</br>
+   SETTING VIEW  <kbd><img src="screenshoot/h.jpeg" width="400"></kbd>
+   </br>
+</br>
+UPDATE NOTES   <kbd><img src="screenshoot/j.jpeg" width="400"></kbd>
+</br>
+</br>
+ADd new  <kbd><img src="screenshoot/k.jpeg" width="400"></kbd>
+</br>
+</br>
+SHARE ON WHATSSAPP  <kbd><img src="screenshoot/l.jpeg" width="400"></kbd>
 ## Getting Started
 
 This project is a starting point for a Flutter application.
