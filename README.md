@@ -1,7 +1,7 @@
 # labfinal
 
 
-  SPLASH SCREEN   <kbd><img src="SCREENSHOOT/aa.jpeg" ></kbd>
+  SPLASH SCREEN   <kbd><img src="SCREENSHOOT/aa.jpeg width="400" ></kbd>
   </br>
 </br>
   
@@ -11,13 +11,13 @@
    SIGNUP PAGE <kbd><img src="SCREENSHOOT/c.jpeg" width="400"></kbd>
 </br>
 </br>
- MAIN ADDED NOTE SCREEN   <kbd><img src="SCREENSHOOT/d.jpg" width="400"></kbd>
+ MAIN ADDED NOTE SCREEN   <kbd><img src="SCREENSHOOT/d.jpeg" width="400"></kbd>
 </br>
 </br>
  SEARCHING NOTE <kbd><img src="SCREENSHOOT/e.jpeg" width="400"></kbd>
  </br>
 </br>
-VIEW NOTES <kbd><img src="SCREENSHOOT/f.jpg" width="400"></kbd>
+VIEW NOTES <kbd><img src="SCREENSHOOT/f.jpeg" width="400"></kbd>
   </br>
 </br>
   DELETE NOTES  <kbd><img src="SCREENSHOOT/g.jpeg" width="400"></kbd>
