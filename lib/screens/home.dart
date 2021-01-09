@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:notes/components/faderoute.dart';
+import 'package:notes/screens/edit.dart';
+import 'package:notes/screens/view.dart';
 import 'package:notes/data/models.dart';
 import 'package:notes/services/database.dart';
 
