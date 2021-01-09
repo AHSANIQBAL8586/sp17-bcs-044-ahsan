@@ -1,7 +1,7 @@
 # labfinal
 
 
-  SPLASH SCREEN   <kbd><img src="SCREENSHOOT/aa.jpeg width="400" ></kbd>
+  SPLASH SCREEN   <kbd><img src="SCREENSHOOT/aa.jpeg" width="400" ></kbd>
   </br>
 </br>
   
